@@ -2,27 +2,9 @@ import XCTest
 @testable import AccessibilityNavigator
 
 final class AccessibilityNavigatorTests: XCTestCase {
-//    func testOpenXcodeSettings() throws {
-//        let observer = AppObserver()
-//        let pid = observer.find(bundleID: "com.apple.dt.Xcode")!
-//        
-//        // Click the settings button in setting's menu item
-//        try AccessibilityNavigator
-//            .application(pid: pid)
-//            .children()
-//            .findFirstRole(role: .menuBar)
-//            .children()
-//            .findFirstWhere(attribute: .TitleAttribute, is: .cfString(value: "Xcode" as CFString))
-//            .children()
-//            .findFirstRole(role: .menu)
-//            .children()
-//            .findFirstWhere(attribute: .TitleAttribute, contains: "Settings")
-//            .click()
-//    }
-    
-    func testOpenMessagesSettings() throws {
+    func testOpenXcodeSettings() throws {
         let observer = AppObserver()
-        let pid = observer.find(bundleID: "com.apple.MobileSMS")!
+        let pid = observer.find(bundleID: "com.apple.dt.Xcode")!
         
         // Click the settings button in setting's menu item
         try AccessibilityNavigator
@@ -30,23 +12,11 @@ final class AccessibilityNavigatorTests: XCTestCase {
             .children()
             .findFirstRole(role: .menuBar)
             .children()
-            .itemAt(1)
+            .findFirstWhere(attribute: .TitleAttribute, is: .cfString(value: "Xcode" as CFString))
             .children()
             .findFirstRole(role: .menu)
             .children()
-            .itemAt(2)
+            .findFirstWhere(attribute: .TitleAttribute, contains: "Settings")
             .click()
-        
-       let messages = try AccessibilityNavigator
-            .application(pid: pid)
-            .children()
-            
-        messages.forEach { element in
-            print("======")
-            print(element.info())
-            print("======")
-        }
-
     }
-
 }
