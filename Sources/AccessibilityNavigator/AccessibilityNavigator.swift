@@ -1,6 +1,6 @@
 import Cocoa
 
-class AccessibilityNavigator {
+public class AccessibilityNavigator {
     static public func application(pid: pid_t) -> Element {
         let element = AXUIElementCreateApplication(pid)
         return Element(element: element)

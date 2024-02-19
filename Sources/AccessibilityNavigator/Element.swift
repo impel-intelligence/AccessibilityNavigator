@@ -96,20 +96,20 @@ extension Element {
 }
 
 extension Element {
-    func setActionTimeout(timeout: Float) -> Element {
+    public func setActionTimeout(timeout: Float) -> Element {
         AXUIElementSetMessagingTimeout(element, timeout)
         return self
     }
     
     @discardableResult
-    func click() throws -> Element {
+    public func click() throws -> Element {
         let error = AXUIElementPerformAction(element, Action.pressAction.value as CFString)
         guard error == .success else { throw ElementError.performActionError(error: error) }
         return self
     }
     
     @discardableResult
-    func performAction(action: Action) throws -> Element {
+    public func performAction(action: Action) throws -> Element {
         let error = AXUIElementPerformAction(element, action.value as CFString)
         guard error == .success else { throw ElementError.performActionError(error: error) }
         return self
