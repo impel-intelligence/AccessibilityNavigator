@@ -195,6 +195,30 @@ extension [Element] {
     }
 }
 
+// MARK: Find Subrole
+extension [Element] {
+    public func findSubrole(subrole: ElementSubrole) -> [Element] {
+        return self.filter({$0.element.subrole == subrole})
+    }
+
+    public func findFirstSubrole(subrole: ElementSubrole) throws -> Element {
+        guard let element = self.first(where: {$0.element.subrole == subrole}) else {
+            throw FindError.noElementWithSubrole(subrole: subrole)
+        }
+        
+        return element
+    }
+
+    public func findLastSubrole(subrole: ElementSubrole) throws -> Element {
+        guard let element = self.last(where: {$0.element.subrole == subrole}) else {
+            throw FindError.noElementWithSubrole(subrole: subrole)
+        }
+        
+        return element
+    }
+}
+
+
 // MARK: Index
 extension [Element] {
     public func itemAt(_ index: Int) throws -> Element {

@@ -13,5 +13,6 @@ public enum FindError: Error  {
     case noElementWithValue(value: AttributeValue, attribute: Attribute)
     case noElementContains(string: String, attribute: Attribute)
     case noElementWithRole(role: ElementRole)
+    case noElementWithSubrole(subrole: ElementSubrole)
     case outOfRange(index: Int)
 }
