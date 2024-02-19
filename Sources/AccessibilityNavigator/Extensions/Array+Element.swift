@@ -195,6 +195,29 @@ extension [Element] {
     }
 }
 
+// MARK: Find Where Not Role
+extension [Element] {
+    public func findWhereNotRole(role: ElementRole) -> [Element] {
+        return self.filter({$0.element.role != role})
+    }
+
+    public func findFirstWhereNotRole(role: ElementRole) throws -> Element {
+        guard let element = self.first(where: {$0.element.role != role}) else {
+            throw FindError.noElementWithRole(role: role)
+        }
+        
+        return element
+    }
+
+    public func findLastWhereNotRole(role: ElementRole) throws -> Element {
+        guard let element = self.last(where: {$0.element.role != role}) else {
+            throw FindError.noElementWithRole(role: role)
+        }
+        
+        return element
+    }
+}
+
 // MARK: Find Subrole
 extension [Element] {
     public func findSubrole(subrole: ElementSubrole) -> [Element] {
@@ -218,6 +241,28 @@ extension [Element] {
     }
 }
 
+// MARK: Find Where NOT Subrole
+extension [Element] {
+    public func findWhereNotSubrole(subrole: ElementSubrole) -> [Element] {
+        return self.filter({$0.element.subrole != subrole})
+    }
+
+    public func findFirstWhereNotSubrole(subrole: ElementSubrole) throws -> Element {
+        guard let element = self.first(where: {$0.element.subrole != subrole}) else {
+            throw FindError.noElementWithSubrole(subrole: subrole)
+        }
+        
+        return element
+    }
+
+    public func findLastWhereNotSubrole(subrole: ElementSubrole) throws -> Element {
+        guard let element = self.last(where: {$0.element.subrole != subrole}) else {
+            throw FindError.noElementWithSubrole(subrole: subrole)
+        }
+        
+        return element
+    }
+}
 
 // MARK: Index
 extension [Element] {
