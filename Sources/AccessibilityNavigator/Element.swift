@@ -109,6 +109,13 @@ extension Element {
     }
     
     @discardableResult
+    public func confirm() throws -> Element {
+        let error = AXUIElementPerformAction(element, Action.confirmationAction.value as CFString)
+        guard error == .success else { throw ElementError.performActionError(error: error) }
+        return self
+    }
+    
+    @discardableResult
     public func performAction(action: Action) throws -> Element {
         let error = AXUIElementPerformAction(element, action.value as CFString)
         guard error == .success else { throw ElementError.performActionError(error: error) }
@@ -120,7 +127,6 @@ extension Element {
         let error = AXUIElementSetAttributeValue(element, attribute.attribute as CFString, ref)
         guard error == .success else { throw ElementError.setValueError(error: error) }
         return self
-
     }
 }
 

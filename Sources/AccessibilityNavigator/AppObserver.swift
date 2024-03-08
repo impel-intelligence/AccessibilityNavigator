@@ -10,7 +10,7 @@ public class AppObserver {
             
             for change in difference {
                 switch change {
-                case let .remove(offset, oldElement, _):
+                case let .remove(offset, _, _):
                     self.runningApplications.remove(at: offset)
                 case let .insert(offset, newElement, _):
                     self.runningApplications.insert(newElement, at: offset)
