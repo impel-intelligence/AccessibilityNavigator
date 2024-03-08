@@ -20,6 +20,39 @@ public enum AttributeValue: Equatable {
         return self.stringValue.lowercased().contains(string.lowercased())
     }
     
+    public func coreFoundationValue() -> CFTypeRef? {
+        switch self {
+        case .axIUElement(let value):
+            return value
+        case .axValue(let value):
+            return value
+        case .cfArray(let value):
+            return value
+        case .cfBoolean(let value):
+            return value
+        case .cfNumber(let value):
+            return value
+        case .cfString(let value):
+            return value
+        case .cfURL(let value):
+            return value
+        case .cfAttributedString(let value):
+            return value
+        case .cgPoint(let value):
+            return value as CFTypeRef
+        case .cgSize(let value):
+            return value as CFTypeRef
+        case .cgRect(let value):
+            return value as CFTypeRef
+        case .cfRange(let value):
+            return value as CFTypeRef
+        case .axError(let value):
+            return value as CFTypeRef
+        case .illegal:
+            return nil
+        }
+    }
+    
     public var typeStringValue: String {
         switch self {
         case .axIUElement(_):

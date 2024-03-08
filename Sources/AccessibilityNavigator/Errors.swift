@@ -7,6 +7,8 @@ public enum ElementError: Error {
     case axValueNil
     case copyAttributeError(error: AXError)
     case performActionError(error: AXError)
+    case setValueError(error: AXError)
+    case invalidValue
 }
 
 public enum FindError: Error  {

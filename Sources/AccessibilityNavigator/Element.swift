@@ -114,5 +114,13 @@ extension Element {
         guard error == .success else { throw ElementError.performActionError(error: error) }
         return self
     }
+    
+    public func setValue(attribute: Attribute, to value: AttributeValue) throws -> Element {
+        guard let ref = value.coreFoundationValue() else { throw ElementError.invalidValue }
+        let error = AXUIElementSetAttributeValue(element, attribute.attribute as CFString, ref)
+        guard error == .success else { throw ElementError.setValueError(error: error) }
+        return self
+
+    }
 }
 
