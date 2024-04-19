@@ -24,7 +24,7 @@ extension Element {
         return element.children?.compactMap({ Element(element: $0) }) ?? []
     }
     
-    func allChilden() -> [Element] {
+    public func allChilden() -> [Element] {
         var collectedElements: [Element] = children()
 
         for child in children() {
