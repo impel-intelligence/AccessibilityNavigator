@@ -49,6 +49,11 @@ public enum ElementSubrole: RawRepresentable, CaseIterable {
     case separatorDockItem
     case processSwitcherList
     
+    // Browser Roles
+    case AXLandmarkBanner
+    case AXDocumentArticle
+    case AXApplicationGroup
+    
     public init?(rawValue: String) {
         switch rawValue {
         case kAXCloseButtonSubrole:
@@ -202,6 +207,12 @@ public enum ElementSubrole: RawRepresentable, CaseIterable {
             return kAXSeparatorDockItemSubrole
         case .processSwitcherList:
             return kAXProcessSwitcherListSubrole
+        case .AXLandmarkBanner:
+            return kAXLandmarkBannerSubrole
+        case .AXDocumentArticle:
+            return kAXDocumentArticleSubrole
+        case .AXApplicationGroup:
+            return kAXApplicationGroupSubrole
         }
     }
 }

@@ -13,7 +13,7 @@ public enum ElementRole: String, CaseIterable {
     case scrollArea
     case scrollBar
     case radioGroup
-    case lis
+    case list
     case group
     case valueIndicator
     case comboBox
@@ -67,6 +67,8 @@ public enum ElementRole: String, CaseIterable {
     case column
     case row
     case outline
+    case link
+    case webArea
     
     public init?(rawValue: String) {
         switch rawValue {
@@ -79,7 +81,7 @@ public enum ElementRole: String, CaseIterable {
         case kAXRadioGroupRole:
             self = .radioGroup
         case kAXListRole:
-            self = .lis
+            self = .list
         case kAXGroupRole:
             self = .group
         case kAXValueIndicatorRole:
@@ -186,6 +188,10 @@ public enum ElementRole: String, CaseIterable {
             self = .row
         case kAXOutlineRole:
             self = .outline
+        case kAXLinkRole:
+            self = .link
+        case kAXWebAreaRole:
+            self = .webArea
         default:
             self = .unknown
         }
@@ -201,7 +207,7 @@ public enum ElementRole: String, CaseIterable {
             return kAXScrollBarRole
         case .radioGroup:
             return kAXRadioGroupRole
-        case .lis:
+        case .list:
             return kAXListRole
         case .group:
             return kAXGroupRole
@@ -309,6 +315,10 @@ public enum ElementRole: String, CaseIterable {
             return kAXRowRole
         case .outline:
             return kAXOutlineRole
+        case .link:
+            return kAXLinkRole
+        case .webArea:
+            return kAXWebAreaRole
         }
     }
 }

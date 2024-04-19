@@ -23,6 +23,17 @@ extension Element {
     public func children() -> [Element] {
         return element.children?.compactMap({ Element(element: $0) }) ?? []
     }
+    
+    func allChilden() -> [Element] {
+        var collectedElements: [Element] = element.children()
+
+        for child in element.children() {
+            let subElements = collectAll(in: child)
+            collectedElements.append(contentsOf: subElements)
+        }
+                
+        return collectedElements
+    }
 
     public func value(for attribute: Attribute) throws -> AttributeValue {
         var ptr: CFTypeRef?
