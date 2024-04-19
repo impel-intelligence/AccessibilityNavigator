@@ -25,10 +25,10 @@ extension Element {
     }
     
     func allChilden() -> [Element] {
-        var collectedElements: [Element] = element.children()
+        var collectedElements: [Element] = children()
 
-        for child in element.children() {
-            let subElements = collectAll(in: child)
+        for child in children() {
+            let subElements = child.allChilden()
             collectedElements.append(contentsOf: subElements)
         }
                 
