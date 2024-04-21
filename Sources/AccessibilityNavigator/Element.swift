@@ -31,7 +31,7 @@ extension Element {
     
     /// Enables an enhanced accessibility mode in Electron applications.
     /// - Returns: An element with AXManualAccessibility set to false
-    public func disableManualAccessibility() throws -> Element {
+    public func disableManualAccessibility() -> Element {
         _ = try? self.setValue(attribute: .AXManualAccessibility, to: .cfBoolean(value: false as CFBoolean))
         return self
     }
@@ -48,7 +48,7 @@ extension Element {
     /// Disables an enhanced accessibility user interface in some applications. Namely chromium based browser.
     /// - Returns: An element with AXEnhancedUserInterface set to false
     @discardableResult
-    public func disableEnhancedUserInterface() throws -> Element {
+    public func disableEnhancedUserInterface() -> Element {
         _ = try? self.setValue(attribute: .AXEnhancedUserInterface, to: .cfBoolean(value: false as CFBoolean))
         return self
     }
