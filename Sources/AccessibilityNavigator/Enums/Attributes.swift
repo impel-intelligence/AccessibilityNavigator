@@ -2,6 +2,7 @@ import Foundation
 import Cocoa
 
 public enum Attribute: String, CaseIterable {
+    // MARK: Public
     case RoleAttribute
     case SubroleAttribute
     case RoleDescriptionAttribute
@@ -156,6 +157,46 @@ public enum Attribute: String, CaseIterable {
     case ScreenPointForLayoutPointParameterizedAttribute
     case ScreenSizeForLayoutSizeParameterizedAttribute
     
+    // MARK: Private
+    // See `PrivateAXAttributes.swift`
+    case AXARIAAtomicAttribute
+    case AXARIABusyAttribute
+    case AXARIAColumnCountAttribute
+    case AXARIAColumnIndexAttribute
+    case AXARIALiveAttribute
+    case AXARIAPosInSetAttribute
+    case AXARIARelevantAttribute
+    case AXARIARowCountAttribute
+    case AXARIARowIndexAttribute
+    case AXARIASetSizeAttribute
+    case AXAccessKeyAttribute
+    case AXDOMIdentifierAttribute
+    case AXDropEffectsAttribute
+    case AXGrabbedAttribute
+    case AXInvalidAttribute
+    case AXIsMultiSelectableAttribute
+    case AXLoadingProgressAttribute
+    case AXUIElementCountForSearchPredicateParameterizedAttribute
+    case AXUIElementsForSearchPredicateParameterizedAttribute
+    case AXVisitedAttribute
+
+    case AXStartTextMarkerAttribute
+    case AXEndTextMarkerAttribute
+    case AXSelectedTextMarkerRangeAttribute
+    case AXTextMarkerIsValidParameterizedAttribute
+    case AXIndexForTextMarkerParameterizedAttribute
+    case AXTextMarkerForIndexParameterizedAttribute
+    case AXEndTextMarkerForBoundsParameterizedAttribute
+    case AXStartTextMarkerForBoundsParameterizedAttribute
+    case AXLineTextMarkerRangeForTextMarkerParameterizedAttribute
+    case AXSelectTextWithCriteriaParameterizedAttribute
+    case AXBoundsForTextMarkerRangeParameterizedAttribute
+    case AXTextMarkerRangeForUnorderedTextMarkersParameterizedAttribute
+    case AXIndexForChildUIElementParameterizedAttribute
+
+    case AXManualAccessibility
+    case AXEnhancedUserInterface
+
     var attribute: String {
         switch self {
         case .RoleAttribute:
@@ -464,6 +505,77 @@ public enum Attribute: String, CaseIterable {
             return kAXScreenPointForLayoutPointParameterizedAttribute
         case .ScreenSizeForLayoutSizeParameterizedAttribute:
             return kAXScreenSizeForLayoutSizeParameterizedAttribute
+        case .AXARIAAtomicAttribute:
+            return kAXARIAAtomicAttribute
+        case .AXARIABusyAttribute:
+            return kAXARIABusyAttribute
+        case .AXARIAColumnCountAttribute:
+            return kAXARIAColumnCountAttribute
+        case .AXARIAColumnIndexAttribute:
+            return kAXARIAColumnIndexAttribute
+        case .AXARIALiveAttribute:
+            return kAXARIALiveAttribute
+        case .AXARIAPosInSetAttribute:
+            return kAXARIAPosInSetAttribute
+        case .AXARIARelevantAttribute:
+            return kAXARIARelevantAttribute
+        case .AXARIARowCountAttribute:
+            return kAXARIARowCountAttribute
+        case .AXARIARowIndexAttribute:
+            return kAXARIARowIndexAttribute
+        case .AXARIASetSizeAttribute:
+            return kAXARIASetSizeAttribute
+        case .AXAccessKeyAttribute:
+            return kAXAccessKeyAttribute
+        case .AXDOMIdentifierAttribute:
+            return kAXDOMIdentifierAttribute
+        case .AXDropEffectsAttribute:
+            return kAXDropEffectsAttribute
+        case .AXGrabbedAttribute:
+            return kAXGrabbedAttribute
+        case .AXInvalidAttribute:
+            return kAXInvalidAttribute
+        case .AXIsMultiSelectableAttribute:
+            return kAXIsMultiSelectableAttribute
+        case .AXLoadingProgressAttribute:
+            return kAXLoadingProgressAttribute
+        case .AXUIElementCountForSearchPredicateParameterizedAttribute:
+            return kAXUIElementCountForSearchPredicateParameterizedAttribute
+        case .AXUIElementsForSearchPredicateParameterizedAttribute:
+            return kAXUIElementsForSearchPredicateParameterizedAttribute
+        case .AXVisitedAttribute:
+            return kAXVisitedAttribute
+        case .AXStartTextMarkerAttribute:
+            return kAXStartTextMarkerAttribute
+        case .AXEndTextMarkerAttribute:
+            return kAXEndTextMarkerAttribute
+        case .AXSelectedTextMarkerRangeAttribute:
+            return kAXSelectedTextMarkerRangeAttribute
+        case .AXTextMarkerIsValidParameterizedAttribute:
+            return kAXTextMarkerIsValidParameterizedAttribute
+        case .AXIndexForTextMarkerParameterizedAttribute:
+            return kAXIndexForTextMarkerParameterizedAttribute
+        case .AXTextMarkerForIndexParameterizedAttribute:
+            return kAXTextMarkerForIndexParameterizedAttribute
+        case .AXEndTextMarkerForBoundsParameterizedAttribute:
+            return kAXEndTextMarkerForBoundsParameterizedAttribute
+        case .AXStartTextMarkerForBoundsParameterizedAttribute:
+            return kAXStartTextMarkerForBoundsParameterizedAttribute
+        case .AXLineTextMarkerRangeForTextMarkerParameterizedAttribute:
+            return kAXLineTextMarkerRangeForTextMarkerParameterizedAttribute
+        case .AXSelectTextWithCriteriaParameterizedAttribute:
+            return kAXSelectTextWithCriteriaParameterizedAttribute
+        case .AXBoundsForTextMarkerRangeParameterizedAttribute:
+            return kAXBoundsForTextMarkerRangeParameterizedAttribute
+        case .AXTextMarkerRangeForUnorderedTextMarkersParameterizedAttribute:
+            return kAXTextMarkerRangeForUnorderedTextMarkersParameterizedAttribute
+        case .AXIndexForChildUIElementParameterizedAttribute:
+            return kAXIndexForChildUIElementParameterizedAttribute
+        case .AXManualAccessibility:
+            return kAXManualAccessibility
+        case .AXEnhancedUserInterface:
+            return kAXEnhancedUserInterface
         }
     }
 }
+

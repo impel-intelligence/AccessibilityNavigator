@@ -20,6 +20,41 @@ public class Element {
 }
 
 extension Element {
+    // The following four functions all return self instead of the value form SetValue because it will almost definitely fail. This is because the values are private and do not report their implementation to Accessibility properly. This means that the call will throw with AXError -25205.
+    
+    /// Enables an enhanced accessibility mode in Electron applications.
+    /// - Returns: An element with AXManualAccessibility set to true
+    public func enableManualAccessibility() throws -> Element {
+        _ = try? self.setValue(attribute: .AXManualAccessibility, to: .cfBoolean(value: true as CFBoolean))
+        return self
+    }
+    
+    /// Enables an enhanced accessibility mode in Electron applications.
+    /// - Returns: An element with AXManualAccessibility set to false
+    public func disableManualAccessibility() throws -> Element {
+        _ = try? self.setValue(attribute: .AXManualAccessibility, to: .cfBoolean(value: false as CFBoolean))
+        return self
+    }
+    
+    /// Enables an enhanced accessibility user interface in some applications. Namely chromium based browser.
+    /// May break window managers and electron apps, so use sparingly and disable after use.
+    /// - Returns: An element with AXEnhancedUserInterface set to true
+    @discardableResult
+    public func enableEnhancedUserInterface() -> Element {
+        _ = try? self.setValue(attribute: .AXEnhancedUserInterface, to: .cfBoolean(value: true as CFBoolean))
+        return self
+    }
+    
+    /// Disables an enhanced accessibility user interface in some applications. Namely chromium based browser.
+    /// - Returns: An element with AXEnhancedUserInterface set to false
+    @discardableResult
+    public func disableEnhancedUserInterface() throws -> Element {
+        _ = try? self.setValue(attribute: .AXEnhancedUserInterface, to: .cfBoolean(value: false as CFBoolean))
+        return self
+    }
+}
+
+extension Element {
     public func children() -> [Element] {
         return element.children?.compactMap({ Element(element: $0) }) ?? []
     }

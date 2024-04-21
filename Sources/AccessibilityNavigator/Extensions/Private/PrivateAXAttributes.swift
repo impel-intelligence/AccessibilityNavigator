@@ -2,59 +2,58 @@
  Private AXAttributes from WebKit
  https://chromium.googlesource.com/chromium/src/+/ee5dac5d4335b5f4fc6bd99136d38e7a070a4559/content/browser/accessibility/browser_accessibility_cocoa.mm
  */
-var AXARIAAtomicAttribute = "AXARIAAtomic"
-var AXARIABusyAttribute = "AXARIABusy"
-var AXARIAColumnCountAttribute = "AXARIAColumnCount"
-var AXARIAColumnIndexAttribute = "AXARIAColumnIndex"
-var AXARIALiveAttribute = "AXARIALive"
-var AXARIAPosInSetAttribute = "AXARIAPosInSet"
-var AXARIARelevantAttribute = "AXARIARelevant"
-var AXARIARowCountAttribute = "AXARIARowCount"
-var AXARIARowIndexAttribute = "AXARIARowIndex"
-var AXARIASetSizeAttribute = "AXARIASetSize"
-var AXAccessKeyAttribute = "AXAccessKey"
-var AXDOMIdentifierAttribute = "AXDOMIdentifier"
-var AXDropEffectsAttribute = "AXDropEffects"
-var AXGrabbedAttribute = "AXGrabbed"
-var AXInvalidAttribute = "AXInvalid"
-var AXIsMultiSelectableAttribute =
+var kAXARIAAtomicAttribute = "AXARIAAtomic"
+var kAXARIABusyAttribute = "AXARIABusy"
+var kAXARIAColumnCountAttribute = "AXARIAColumnCount"
+var kAXARIAColumnIndexAttribute = "AXARIAColumnIndex"
+var kAXARIALiveAttribute = "AXARIALive"
+var kAXARIAPosInSetAttribute = "AXARIAPosInSet"
+var kAXARIARelevantAttribute = "AXARIARelevant"
+var kAXARIARowCountAttribute = "AXARIARowCount"
+var kAXARIARowIndexAttribute = "AXARIARowIndex"
+var kAXARIASetSizeAttribute = "AXARIASetSize"
+var kAXAccessKeyAttribute = "AXAccessKey"
+var kAXDOMIdentifierAttribute = "AXDOMIdentifier"
+var kAXDropEffectsAttribute = "AXDropEffects"
+var kAXGrabbedAttribute = "AXGrabbed"
+var kAXInvalidAttribute = "AXInvalid"
+var kAXIsMultiSelectableAttribute =
     "AXIsMultiSelectable"
-var AXLoadingProgressAttribute = "AXLoadingProgress"
-var
-    AXUIElementCountForSearchPredicateParameterizedAttribute =
+var kAXLoadingProgressAttribute = "AXLoadingProgress"
+var kAXUIElementCountForSearchPredicateParameterizedAttribute =
         "AXUIElementCountForSearchPredicate"
-var
-    AXUIElementsForSearchPredicateParameterizedAttribute =
+var kAXUIElementsForSearchPredicateParameterizedAttribute =
         "AXUIElementsForSearchPredicate"
-var AXVisitedAttribute = "AXVisited"
+var kAXVisitedAttribute = "AXVisited"
 
 // Private attributes for text markers.
-var AXStartTextMarkerAttribute = "AXStartTextMarker"
-var AXEndTextMarkerAttribute = "AXEndTextMarker"
-var AXSelectedTextMarkerRangeAttribute =
+var kAXStartTextMarkerAttribute = "AXStartTextMarker"
+var kAXEndTextMarkerAttribute = "AXEndTextMarker"
+var kAXSelectedTextMarkerRangeAttribute =
     "AXSelectedTextMarkerRange"
-var AXTextMarkerIsValidParameterizedAttribute =
+var kAXTextMarkerIsValidParameterizedAttribute =
     "AXTextMarkerIsValid"
-var AXIndexForTextMarkerParameterizedAttribute =
+var kAXIndexForTextMarkerParameterizedAttribute =
     "AXIndexForTextMarker"
-var AXTextMarkerForIndexParameterizedAttribute =
+var kAXTextMarkerForIndexParameterizedAttribute =
     "AXTextMarkerForIndex"
-var AXEndTextMarkerForBoundsParameterizedAttribute =
+var kAXEndTextMarkerForBoundsParameterizedAttribute =
     "AXEndTextMarkerForBounds"
-var AXStartTextMarkerForBoundsParameterizedAttribute =
+var kAXStartTextMarkerForBoundsParameterizedAttribute =
     "AXStartTextMarkerForBounds"
-var
-    AXLineTextMarkerRangeForTextMarkerParameterizedAttribute =
+var kAXLineTextMarkerRangeForTextMarkerParameterizedAttribute =
         "AXLineTextMarkerRangeForTextMarker"
-var AXSelectTextWithCriteriaParameterizedAttribute =
+var kAXSelectTextWithCriteriaParameterizedAttribute =
     "AXSelectTextWithCriteria"
-var AXBoundsForTextMarkerRangeParameterizedAttribute =
+var kAXBoundsForTextMarkerRangeParameterizedAttribute =
     "AXBoundsForTextMarkerRange"
-var AXTextMarkerRangeForUnorderedTextMarkersParameterizedAttribute =
+var kAXTextMarkerRangeForUnorderedTextMarkersParameterizedAttribute =
     "AXTextMarkerRangeForUnorderedTextMarkers"
-var AXIndexForChildUIElementParameterizedAttribute =
+var kAXIndexForChildUIElementParameterizedAttribute =
     "AXIndexForChildUIElement"
 
 /*
- 
+ VoiceOver, Chrome & Electron private attributes
  */
+var kAXManualAccessibility = "AXManualAccessibility"
+var kAXEnhancedUserInterface = "AXEnhancedUserInterface"
