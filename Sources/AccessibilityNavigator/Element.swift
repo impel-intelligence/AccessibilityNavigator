@@ -1,6 +1,6 @@
 import Cocoa
 
-public class Element {
+public class Element: Equatable {
     var element: AXUIElement
     
     init(element: AXUIElement) {
@@ -16,6 +16,10 @@ public class Element {
         }
         
         return infoString
+    }
+    
+    public static func == (lhs: Element, rhs: Element) -> Bool {
+        lhs.element == rhs.element
     }
 }
 
